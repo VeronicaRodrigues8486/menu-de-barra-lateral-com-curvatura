@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curva fora da aba ativa| Menu barra lateral</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;1,400;1,600&family=Roboto:wght@500;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="navegacao">
+        <ul>
+            <li class="list active">
+                <b></b>
+                <b></b>
+                <a href="#">
+                    <span class="icon"><ion-icon name="home"></ion-icon></span>
+                    <span class="title">Home</span>
+                </a>
+            </li>
+            <li class="list">
+                <b></b>
+                <b></b>
+                <a href="#">
+                    <span class="icon"><ion-icon name="person"></ion-icon></span>
+                    <span class="title">Perfil</span>
+                </a>
+            </li>
+            <li class="list">
+                <b></b>
+                <b></b>
+                <a href="#">
+                    <span class="icon"><ion-icon name="chatbubbles"></ion-icon></span>
+                    <span class="title">Menssagem</span>
+                </a>
+            </li>
+            <li class="list">
+                <b></b>
+                <b></b>
+                <a href="#">
+                    <span class="icon"><ion-icon name="settings"></ion-icon></span>
+                    <span class="title">Configuração</span>
+                </a>
+            </li>
+            <li class="list">
+                <b></b>
+                <b></b>
+                <a href="#">
+                    <span class="icon"><ion-icon name="help-circle-outline"></ion-icon></span>
+                    <span class="title">Ajuda</span>
+                </a>
+            </li>
+            <li class="list">
+                <b></b>
+                <b></b>
+                <a href="#">
+                    <span class="icon"><ion-icon name="lock"></ion-icon></span>
+                    <span class="title">Senha</span>
+                </a>
+            </li>
+            <li class="list">
+                <b></b>
+                <b></b>
+                <a href="#">
+                    <span class="icon"><ion-icon name="log-out"></ion-icon></span>
+                    <span class="title">Sair</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="toggle">
+        <ion-icon name="menu" class="open"></ion-icon>
+        <ion-icon name="close" class="close"></ion-icon>
+    </div>
+
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+
+    <script>
+
+        let menuToggle = document.querySelector('.toggle');
+        let navegacao = document.querySelector('.navegacao');
+        menuToggle.onclick = function(){
+            menuToggle.classList.toggle('active');
+            navegacao.classList.toggle('active');
+        }
+
+
+        // adicionar o item ativo da lista selecionado
+        let list = document.querySelectorAll('.list');
+        for (let i=0; i<list.length; i++){
+            list[i].onclick = function(){
+               let j = 0; 
+               while(j < list.length){
+                   list[j++].className = 'list;'
+               }
+               list[i].className = 'list active';
+            }
+        }
+    </script>
+
+</body>
+</html>
